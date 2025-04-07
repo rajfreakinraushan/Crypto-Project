@@ -150,17 +150,23 @@ function App() {
   const messagesEndRef = useRef(null)
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/crypto")
+    const baseURL =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:5000"
+        : "https://crypto-project-nafm.onrender.com";
+  
+    fetch(`${baseURL}/api/crypto`)
       .then((response) => response.json())
       .then((data) => {
-        setCryptoData(data)
-        setLoading(false)
+        setCryptoData(data);
+        setLoading(false);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error)
-        setLoading(false)
-      })
-  }, [])
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      });
+  }, []);
+  
 
   useEffect(() => {
     // Scroll to bottom of messages when new messages are added
