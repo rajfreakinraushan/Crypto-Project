@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Crypto-Project/static/css/main.cab3471a.css",
+    "main.js": "/Crypto-Project/static/js/main.113a5a3d.js",
+    "static/js/453.5f60abc8.chunk.js": "/Crypto-Project/static/js/453.5f60abc8.chunk.js",
+    "index.html": "/Crypto-Project/index.html",
+    "main.cab3471a.css.map": "/Crypto-Project/static/css/main.cab3471a.css.map",
+    "main.113a5a3d.js.map": "/Crypto-Project/static/js/main.113a5a3d.js.map",
+    "453.5f60abc8.chunk.js.map": "/Crypto-Project/static/js/453.5f60abc8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cab3471a.css",
+    "static/js/main.113a5a3d.js"
+  ]
+}
