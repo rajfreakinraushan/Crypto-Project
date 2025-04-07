@@ -149,24 +149,24 @@ function App() {
   const isInView = useInView(cryptoSectionRef, { once: false, amount: 0.2 })
   const messagesEndRef = useRef(null)
 
-  useEffect(() => {
-    const baseURL =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:5000"
-        : "https://crypto-project-nafm.onrender.com";
-  
-    fetch(`${baseURL}/api/crypto`)
-      .then((response) => response.json())
-      .then((data) => {
-        setCryptoData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      });
-  }, []);
-  
+  const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://crypto-project-nafm.onrender.com"
+    : "http://localhost:5000";
+
+useEffect(() => {
+  fetch(`${baseUrl}/api/crypto`)
+    .then((response) => response.json())
+    .then((data) => {
+      setCryptoData(data);
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      setLoading(false);
+    });
+}, []);
+
 
   useEffect(() => {
     // Scroll to bottom of messages when new messages are added
