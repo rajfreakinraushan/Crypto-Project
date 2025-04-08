@@ -3,8 +3,11 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 const port = 5000;
-
-app.use(cors());
+//fetching
+app.use(cors({
+    origin: "https://rajfreakinraushan.github.io"
+  }));
+  
 
 // Define the /api/crypto endpoint
 app.get('/api/crypto', async (req, res) => {
